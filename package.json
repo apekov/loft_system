@@ -4,7 +4,8 @@
     "description": "",
     "main": "server.js",
     "scripts": {
-        "start": "nodemon --ignore sessions/ server.js"
+        "test_start": "nodemon --ignore sessions/ server.js",
+        "start": "node server.js"
     },
     "author": "alan",
     "license": "ISC",
