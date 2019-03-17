@@ -1,0 +1,35 @@
+{
+    "name": "homework",
+    "version": "1.0.0",
+    "description": "",
+    "main": "server.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "nodemon --ignore sessions/ server.js"
+    },
+    "author": "alan",
+    "license": "ISC",
+    "dependencies": {
+        "bcryptjs": "^2.4.3",
+        "body-parser": "^1.18.3",
+        "chance": "^1.0.18",
+        "connect-flash": "^0.1.1",
+        "cookie-parser": "^1.4.4",
+        "express": "^4.16.4",
+        "express-session": "^1.15.6",
+        "formidable": "^1.2.1",
+        "jimp": "^0.6.0",
+        "morgan": "^1.9.1",
+        "passport": "^0.4.0",
+        "passport-github2": "^0.1.11",
+        "passport-local": "^1.0.0",
+        "pg": "^7.8.2",
+        "pg-hstore": "^2.3.2",
+        "pug": "^2.0.3",
+        "sequelize": "^4.43.0",
+        "sequelize-json": "^2.1.2",
+        "session-file-store": "^1.2.0",
+        "socket.io": "^2.2.0",
+        "uuid": "^3.3.2"
+    }
+}
