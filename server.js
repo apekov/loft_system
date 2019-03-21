@@ -60,5 +60,6 @@ app.use(function(err, req, res, next) {
 server.listen(3000, () => {
     console.log(`App listen port 3000`);
 });
-
 require('./socket_server');
+
+module.exports = server;

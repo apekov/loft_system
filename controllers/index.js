@@ -100,10 +100,10 @@ module.exports = {
         let upload = path.join('./dist', 'upload');
         form.uploadDir = path.join(process.cwd(), upload);
         form.parse(req, (err, fields, files) => {
-            let fileName = path.join(upload, files['20'].name);
-            let imgSmallName = path.join(upload, `small-${files['20'].name}`);
-            let bigImgSave = `/upload/${files['20'].name}`;
-            fs.rename(files['20'].path, fileName)
+            let fileName = path.join(upload, files[req.params.id].name);
+            let imgSmallName = path.join(upload, `small-${files[req.params.id].name}`);
+            let bigImgSave = `/upload/${files[req.params.id].name}`;
+            fs.rename(files[req.params.id].path, fileName)
                 .then(result => {
                     Jimp.read(fileName)
                         .then(img => {
@@ -130,15 +130,15 @@ module.exports = {
     getNews: async(req, res) => {
         let boofArray = [];
         let news = await sequelize.models.news.findAll();
-        let users = await sequelize.models.users.findAll();
-        news.forEach((item) => {
-            let saveObj = item.dataValues;
-            users.forEach((user) => {
-                saveObj.user = (user.dataValues.id === item.dataValues.userId) ? user.dataValues : null;
-            })
-            boofArray.push(saveObj);
-        })
-        res.json(boofArray);
+        // let users = await sequelize.models.users.findAll();
+        // news.forEach((item) => {
+        //     let saveObj = item.dataValues;
+        //     users.forEach((user) => {
+        //         saveObj.user = (user.dataValues.id === item.dataValues.userId) ? user.dataValues : null;
+        //     })
+        //     boofArray.push(saveObj);
+        // })
+        res.json(news);
     },
     getUsers: async(req, res) => {
         let users = await sequelize.models.users.findAll();
